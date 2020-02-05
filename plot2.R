@@ -14,3 +14,7 @@ epc$DateTime <- strptime(paste(epc$Date, epc$Time), format="%Y-%m-%d %H:%M:%S")
 
 # Create plot2
 with(epc, plot(DateTime,Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = ""))
+
+# Export to PNG
+dev.copy(png, file = "plot2.png")
+dev.off()
